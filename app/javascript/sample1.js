@@ -28,3 +28,21 @@ let myDate5 = new Date()
 myDate5.setMonth(myDate5.getDate()+1)
 myDate5.setDate(15)
 console.log(myDate5)
+
+///任意の日付を取得
+
+//曜日の取得
+let myDate6 = new Date()
+let dayNames = ["日","月","火","水","木","金","土"]
+let day = myDate6.getDay()
+console.log("今日は"+ dayNames[day]+"曜日です。")
+
+//今の時刻を取得
+let myDate7 = new Date()
+
+console.log(
+  "時刻は"+myDate7.getHours() + "時"+
+          myDate7.getMinutes()+"分"+
+          myDate7.getSeconds()+"秒"+
+          myDate7.getMilliseconds()+"ミリ秒です。"
+)
