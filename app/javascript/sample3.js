@@ -19,10 +19,24 @@ let students = [
   }
 ]
 
-students.forEach(function(student){
+students                      //mapメソッドを使ってtotalプロパティが含まれたオブジェクトを新しく作ります
+  .map(function(student){
+    let total = student.language +
+                student.maths +
+                student.science
+    return{
+      name: student.name,
+      total: total
+    }
+  })
+  .filter(function(student){
+    return student.total >= 190    //合計190点以上を合格、表示する仕様
+  })
+  .forEach(function(student){
   console.log(
-    "生徒の名前は" +
     student.name +
-    "さんです"
+    "さんの合計点数は" +
+    student.total +
+    "点です"
   )
 })
